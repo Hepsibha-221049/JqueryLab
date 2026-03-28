@@ -211,66 +211,122 @@
 
 // });
 
+// $(document).ready(function () {
+
+//     // 🔹 BASIC EFFECTS
+
+//     $("#show").click(function () {
+//         $("#box").show();
+//     });
+
+//     $("#hide").click(function () {
+//         $("#box").hide();
+//     });
+
+//     $("#toggle").click(function () {
+//         $("#box").toggle();
+//     });
+
+
+//     // 🔹 FADE EFFECTS
+
+//     $("#fadeIn").click(function () {
+//         $("#box").fadeIn();
+//     });
+
+//     $("#fadeOut").click(function () {
+//         $("#box").fadeOut();
+//     });
+
+//     $("#fadeToggle").click(function () {
+//         $("#box").fadeToggle();
+//     });
+
+//     $("#fadeTo").click(function () {
+//         $("#box").fadeTo(1000, 0.3); // speed, opacity
+//     });
+
+
+//     // 🔹 SLIDING EFFECTS
+
+//     $("#slideDown").click(function () {
+//         $("#box").slideDown();
+//     });
+
+//     $("#slideUp").click(function () {
+//         $("#box").slideUp();
+//     });
+
+//     $("#slideToggle").click(function () {
+//         $("#box").slideToggle();
+//     });
+
+
+//     // 🔹 CUSTOM ANIMATION
+
+//     $("#animate").click(function () {
+//         $("#box").animate({
+//             left: "200px",   // move horizontally
+//             opacity: 0.5,    // change opacity
+//             width: "150px",  // resize
+//             height: "150px"
+//         }, 1000);
+//     });
+
+// });
+
+
 $(document).ready(function () {
 
-    // 🔹 BASIC EFFECTS
-
-    $("#show").click(function () {
-        $("#box").show();
-    });
-
-    $("#hide").click(function () {
-        $("#box").hide();
-    });
-
-    $("#toggle").click(function () {
-        $("#box").toggle();
+    // 🔹 START ANIMATION (creates queue)
+    $("#start").click(function () {
+        $("#box")
+            .animate({ left: "200px" }, 1000)
+            .animate({ top: "100px" }, 1000)
+            .animate({ left: "0px" }, 1000)
+            .animate({ top: "0px" }, 1000);
     });
 
 
-    // 🔹 FADE EFFECTS
-
-    $("#fadeIn").click(function () {
-        $("#box").fadeIn();
-    });
-
-    $("#fadeOut").click(function () {
-        $("#box").fadeOut();
-    });
-
-    $("#fadeToggle").click(function () {
-        $("#box").fadeToggle();
-    });
-
-    $("#fadeTo").click(function () {
-        $("#box").fadeTo(1000, 0.3); // speed, opacity
+    // 🔹 stop()
+    $("#stop").click(function () {
+        $("#box").stop();
     });
 
 
-    // 🔹 SLIDING EFFECTS
-
-    $("#slideDown").click(function () {
-        $("#box").slideDown();
-    });
-
-    $("#slideUp").click(function () {
-        $("#box").slideUp();
-    });
-
-    $("#slideToggle").click(function () {
-        $("#box").slideToggle();
+    // 🔹 finish()
+    $("#finish").click(function () {
+        $("#box").finish();
     });
 
 
-    // 🔹 CUSTOM ANIMATION
-
-    $("#animate").click(function () {
-        $("#box").animate({
-            left: "200px",   // move horizontally
-            opacity: 0.5,    // change opacity
-            width: "150px",  // resize
-            height: "150px"
-        }, 1000);
+    // 🔹 delay()
+    $("#delay").click(function () {
+        $("#box")
+            .animate({ left: "200px" }, 1000)
+            .delay(2000)
+            .animate({ top: "100px" }, 1000);
     });
+
+
+    // 🔹 clearQueue()
+    $("#clear").click(function () {
+        $("#box").clearQueue();
+    });
+
+
+    // 🔹 queue() + dequeue()
+    $("#box").queue(function (next) {
+        console.log("Step 1");
+        next(); // go to next in queue
+    });
+
+    $("#box").queue(function (next) {
+        console.log("Step 2");
+        next();
+    });
+
+    // manually start queue
+    $("#box").dequeue();
 
 });

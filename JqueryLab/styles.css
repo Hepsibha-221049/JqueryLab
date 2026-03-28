@@ -9,8 +9,7 @@ body {
 }
 
 .highlight {
-    background-color: yellow;
-    color: black;
+    background: yellow;
 }
 
 .dark-theme {

@@ -136,77 +136,141 @@
 
 // });
 
+// $(document).ready(function () {
+
+//     $("#run").click(function () {
+
+//         $(".highlight").removeClass("highlight");
+
+//         // 🔹 PARENT TRAVERSAL
+
+//         $(".special").parent().addClass("highlight");
+//         // immediate parent (ul)
+
+//         $(".special").parents().addClass("highlight");
+//         // all ancestors (parent, grandparent, etc.)
+
+//         $(".special").parentsUntil("#grandparent").addClass("highlight");
+//         // until grandparent (excluding it)
+
+
+
+//         // 🔹 CHILDREN TRAVERSAL
+
+//         $("#parent").children().addClass("highlight");
+//         // direct children
+
+//         $("#parent").find("li").addClass("highlight");
+//         // all descendant li
+
+
+
+//         // 🔹 SIBLING TRAVERSAL
+
+//         $(".special").siblings().addClass("highlight");
+//         // all siblings
+
+//         $(".special").next().addClass("highlight");
+//         // next element
+
+//         $(".special").nextAll().addClass("highlight");
+//         // all next siblings
+
+//         $(".special").nextUntil(":last").addClass("highlight");
+//         // next until last
+
+//         $(".special").prev().addClass("highlight");
+//         // previous element
+
+//         $(".special").prevAll().addClass("highlight");
+//         // all previous siblings
+
+//         $(".special").prevUntil(":first").addClass("highlight");
+//         // previous until first
+
+
+
+//         // 🔹 FILTERING METHODS
+
+//         $("li").first().addClass("highlight");
+//         // first element
+
+//         $("li").last().addClass("highlight");
+//         // last element
+
+//         $("li").eq(2).addClass("highlight");
+//         // index (0-based)
+
+//         $("li").filter(".special").addClass("highlight");
+//         // only special class
+
+//         $("li").not(".special").addClass("highlight");
+//         // except special
+
+//     });
+
+// });
+
 $(document).ready(function () {
 
-    $("#run").click(function () {
+    // 🔹 BASIC EFFECTS
 
-        $(".highlight").removeClass("highlight");
+    $("#show").click(function () {
+        $("#box").show();
+    });
 
-        // 🔹 PARENT TRAVERSAL
+    $("#hide").click(function () {
+        $("#box").hide();
+    });
 
-        $(".special").parent().addClass("highlight");
-        // immediate parent (ul)
-
-        $(".special").parents().addClass("highlight");
-        // all ancestors (parent, grandparent, etc.)
-
-        $(".special").parentsUntil("#grandparent").addClass("highlight");
-        // until grandparent (excluding it)
-
+    $("#toggle").click(function () {
+        $("#box").toggle();
+    });
 
 
-        // 🔹 CHILDREN TRAVERSAL
+    // 🔹 FADE EFFECTS
 
-        $("#parent").children().addClass("highlight");
-        // direct children
+    $("#fadeIn").click(function () {
+        $("#box").fadeIn();
+    });
 
-        $("#parent").find("li").addClass("highlight");
-        // all descendant li
+    $("#fadeOut").click(function () {
+        $("#box").fadeOut();
+    });
 
+    $("#fadeToggle").click(function () {
+        $("#box").fadeToggle();
+    });
 
-
-        // 🔹 SIBLING TRAVERSAL
-
-        $(".special").siblings().addClass("highlight");
-        // all siblings
-
-        $(".special").next().addClass("highlight");
-        // next element
-
-        $(".special").nextAll().addClass("highlight");
-        // all next siblings
-
-        $(".special").nextUntil(":last").addClass("highlight");
-        // next until last
-
-        $(".special").prev().addClass("highlight");
-        // previous element
-
-        $(".special").prevAll().addClass("highlight");
-        // all previous siblings
-
-        $(".special").prevUntil(":first").addClass("highlight");
-        // previous until first
+    $("#fadeTo").click(function () {
+        $("#box").fadeTo(1000, 0.3); // speed, opacity
+    });
 
 
+    // 🔹 SLIDING EFFECTS
 
-        // 🔹 FILTERING METHODS
+    $("#slideDown").click(function () {
+        $("#box").slideDown();
+    });
 
-        $("li").first().addClass("highlight");
-        // first element
+    $("#slideUp").click(function () {
+        $("#box").slideUp();
+    });
 
-        $("li").last().addClass("highlight");
-        // last element
+    $("#slideToggle").click(function () {
+        $("#box").slideToggle();
+    });
 
-        $("li").eq(2).addClass("highlight");
-        // index (0-based)
 
-        $("li").filter(".special").addClass("highlight");
-        // only special class
+    // 🔹 CUSTOM ANIMATION
 
-        $("li").not(".special").addClass("highlight");
-        // except special
-
+    $("#animate").click(function () {
+        $("#box").animate({
+            left: "200px",   // move horizontally
+            opacity: 0.5,    // change opacity
+            width: "150px",  // resize
+            height: "150px"
+        }, 1000);
     });
 
 });

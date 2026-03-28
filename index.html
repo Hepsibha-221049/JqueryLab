@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-4.0.0.min.js"></script>
+</head>
+<body>
+    <h2>Hello World</h2>
+    <h1>Welcome to paris</h1>
+    <form>
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="email" id="email" placeholder="Enter your email">
+    <button type="button" class="btn">Submit</button>
+    </form>
+    <img id="my-image" src="" width="200">
+    
+</body>
+<script>
+        $(document).ready(function(){
+            $(".btn").click(function(){
+                $("#my-image").attr("src","image.jpg");
+            });
+            $("h1").click(function(){
+            $("h1").css({"color":"red","font-family":"Arial"});
+        });
+        });
+        
+</script>
+</html>
+
+<!-- jquery -js library
+jquery works with methods and selectors
+selectors are used to select the element on which we want to perform the action
+$('selector').method()
+hide
+fadeIn
+fadeOut
+class selector
+element selector
+id selector
+$('h2').fadeOut(2000);
+$('#h2').hide();
+$('.h2').hide();class selector
+$('h3').css('color','red'); 
+$('h3').css('color','blue').fadeIn().css().hide();
+this is jquery chainning
+$('h3,p,div').css({'color':'red','background-color':'yellow'});
+jquery attributes
+works as both getter and setter
+.attr()
+.css()
+.html()
+.val()
+<a href=""></a>
+$('a').href('href')
+getter will read the value of the attribute
+setter will set the value of the attribute
+$('img').attr('src', 'new-image.jpg');
+seleting one element changing another element
+$('h2').click(function(){
+    $('p').hide();
+}) -->

@@ -105,33 +105,108 @@
 
 // });
 
+// $(document).ready(function () {
+//     $("#colorBtn").click(function () {
+//         $(".box").css({
+//             "background-color": "lightblue",
+//             "color": "darkblue"
+//         });
+//     });
+//     $("#addClassBtn").click(function () {
+//         $(".box").addClass("highlight");
+//     });
+
+//     $("#removeClassBtn").click(function () {
+//         $(".box").removeClass("highlight");
+//     });
+//     $("#toggleClassBtn").click(function () {
+//         $(".box").toggleClass("highlight");
+//     });
+
+//     $("#checkClassBtn").click(function () {
+//         if ($(".box").hasClass("highlight")) {
+//             alert("Box has highlight class");
+//         } else {
+//             alert("Box does NOT have highlight class");
+//         }
+//     });
+//     $("#themeBtn").click(function () {
+//         $("body").toggleClass("dark-theme");
+//     });
+
+// });
+
 $(document).ready(function () {
-    $("#colorBtn").click(function () {
-        $(".box").css({
-            "background-color": "lightblue",
-            "color": "darkblue"
-        });
-    });
-    $("#addClassBtn").click(function () {
-        $(".box").addClass("highlight");
-    });
 
-    $("#removeClassBtn").click(function () {
-        $(".box").removeClass("highlight");
-    });
-    $("#toggleClassBtn").click(function () {
-        $(".box").toggleClass("highlight");
-    });
+    $("#run").click(function () {
 
-    $("#checkClassBtn").click(function () {
-        if ($(".box").hasClass("highlight")) {
-            alert("Box has highlight class");
-        } else {
-            alert("Box does NOT have highlight class");
-        }
-    });
-    $("#themeBtn").click(function () {
-        $("body").toggleClass("dark-theme");
+        $(".highlight").removeClass("highlight");
+
+        // 🔹 PARENT TRAVERSAL
+
+        $(".special").parent().addClass("highlight");
+        // immediate parent (ul)
+
+        $(".special").parents().addClass("highlight");
+        // all ancestors (parent, grandparent, etc.)
+
+        $(".special").parentsUntil("#grandparent").addClass("highlight");
+        // until grandparent (excluding it)
+
+
+
+        // 🔹 CHILDREN TRAVERSAL
+
+        $("#parent").children().addClass("highlight");
+        // direct children
+
+        $("#parent").find("li").addClass("highlight");
+        // all descendant li
+
+
+
+        // 🔹 SIBLING TRAVERSAL
+
+        $(".special").siblings().addClass("highlight");
+        // all siblings
+
+        $(".special").next().addClass("highlight");
+        // next element
+
+        $(".special").nextAll().addClass("highlight");
+        // all next siblings
+
+        $(".special").nextUntil(":last").addClass("highlight");
+        // next until last
+
+        $(".special").prev().addClass("highlight");
+        // previous element
+
+        $(".special").prevAll().addClass("highlight");
+        // all previous siblings
+
+        $(".special").prevUntil(":first").addClass("highlight");
+        // previous until first
+
+
+
+        // 🔹 FILTERING METHODS
+
+        $("li").first().addClass("highlight");
+        // first element
+
+        $("li").last().addClass("highlight");
+        // last element
+
+        $("li").eq(2).addClass("highlight");
+        // index (0-based)
+
+        $("li").filter(".special").addClass("highlight");
+        // only special class
+
+        $("li").not(".special").addClass("highlight");
+        // except special
+
     });
 
 });

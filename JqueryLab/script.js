@@ -44,63 +44,94 @@
 
 // });
 
+// $(document).ready(function () {
+//     $("#btn").click(function () {
+//         alert("Button Clicked");
+//     });
+//     $("#dblBtn").dblclick(function () {
+//         alert("Double Clicked");
+//     });
+//     $("#box").mouseenter(function () {
+//         $(this).css("background", "lightblue");
+//     });
+//     $("#box").mouseleave(function () {
+//         $(this).css("background", "lightgray");
+//     });
+//     $("#box").hover(
+//         function () { $(this).css("border", "3px solid red"); },
+//         function () { $(this).css("border", "none"); }
+//     );
+//     $("#box").mousedown(function () {
+//         $(this).text("Mouse Down");
+//     });
+//     $("#box").mouseup(function () {
+//         $(this).text("Mouse Up");
+//     });
+//     $("#keyboard").keypress(function () {
+//         console.log("Key Pressed");
+//     });
+//     $("#keyboard").keydown(function () {
+//         console.log("Key Down");
+//     });
+//     $("#keyboard").keyup(function () {
+//         console.log("Key Up");
+//     });
+//     $("#myForm").submit(function (e) {
+//         e.preventDefault(); // prevent page reload
+//         alert("Form Submitted");
+//     });
+//     $("#course").change(function () {
+//         alert("Selected: " + $(this).val());
+//     });
+
+//     // focus
+//     $("#name").focus(function () {
+//         $(this).css("background", "lightyellow");
+//     });
+
+//     // blur
+//     $("#name").blur(function () {
+//         $(this).css("background", "white");
+//     });
+//     $("#btn").on("mouseover", function () {
+//         $(this).css("background", "green");
+//     });
+
+//     // off (remove event)
+//     $("#removeEvent").click(function () {
+//         $("#btn").off("click");
+//         alert("Click event removed");
+//     });
+
+// });
+
 $(document).ready(function () {
-    $("#btn").click(function () {
-        alert("Button Clicked");
+    $("#colorBtn").click(function () {
+        $(".box").css({
+            "background-color": "lightblue",
+            "color": "darkblue"
+        });
     });
-    $("#dblBtn").dblclick(function () {
-        alert("Double Clicked");
-    });
-    $("#box").mouseenter(function () {
-        $(this).css("background", "lightblue");
-    });
-    $("#box").mouseleave(function () {
-        $(this).css("background", "lightgray");
-    });
-    $("#box").hover(
-        function () { $(this).css("border", "3px solid red"); },
-        function () { $(this).css("border", "none"); }
-    );
-    $("#box").mousedown(function () {
-        $(this).text("Mouse Down");
-    });
-    $("#box").mouseup(function () {
-        $(this).text("Mouse Up");
-    });
-    $("#keyboard").keypress(function () {
-        console.log("Key Pressed");
-    });
-    $("#keyboard").keydown(function () {
-        console.log("Key Down");
-    });
-    $("#keyboard").keyup(function () {
-        console.log("Key Up");
-    });
-    $("#myForm").submit(function (e) {
-        e.preventDefault(); // prevent page reload
-        alert("Form Submitted");
-    });
-    $("#course").change(function () {
-        alert("Selected: " + $(this).val());
+    $("#addClassBtn").click(function () {
+        $(".box").addClass("highlight");
     });
 
-    // focus
-    $("#name").focus(function () {
-        $(this).css("background", "lightyellow");
+    $("#removeClassBtn").click(function () {
+        $(".box").removeClass("highlight");
+    });
+    $("#toggleClassBtn").click(function () {
+        $(".box").toggleClass("highlight");
     });
 
-    // blur
-    $("#name").blur(function () {
-        $(this).css("background", "white");
+    $("#checkClassBtn").click(function () {
+        if ($(".box").hasClass("highlight")) {
+            alert("Box has highlight class");
+        } else {
+            alert("Box does NOT have highlight class");
+        }
     });
-    $("#btn").on("mouseover", function () {
-        $(this).css("background", "green");
-    });
-
-    // off (remove event)
-    $("#removeEvent").click(function () {
-        $("#btn").off("click");
-        alert("Click event removed");
+    $("#themeBtn").click(function () {
+        $("body").toggleClass("dark-theme");
     });
 
 });

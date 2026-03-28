@@ -3,3 +3,23 @@
     margin: 5px;
     border: 1px solid black;
 }
+
+body {
+    font-family: Arial;
+}
+
+.highlight {
+    background-color: yellow;
+    color: black;
+}
+
+.dark-theme {
+    background-color: black;
+    color: white;
+}
+
+.box {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+}
